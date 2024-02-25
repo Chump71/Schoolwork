@@ -1,0 +1,45 @@
+def rocketcountdown(num):
+    count_down = []
+    for i in range(num, 0, -1):
+        count_down.append(i)
+    count_down.append('We have lift off!')
+    return count_down
+
+# Test cases
+print(rocketcountdown(10))
+print(rocketcountdown(2)) 
+
+def doubleloop(num1, num2):
+    result = []
+    for i in range(num1):
+        for j in range(num2):
+            result.append(f"{i}:{j}")
+    return result
+
+# Test cases
+print(doubleloop(2, 2))
+print(doubleloop(3, 4)) 
+
+def howmanycombos(num1, num2, num3):
+    combos = []
+    for i in range(num1):
+        for j in range(num2):
+            for k in range(num3):
+                combos.append(f"{i}:{j}:{k}")
+    return combos
+
+def cansofpop(total, takedown):
+    cans_list = []
+    while total > 0:
+        if takedown > total:
+            takedown = total
+        cans_list.append(f'{total} cans of pop on the wall, {total} cans of pop, take {takedown} down and pass them around, {total - takedown} cans of pop on the wall')
+        total -= takedown
+    cans_list.append('All cans of pop are gone!')
+    return cans_list
+
+print(rocketcountdown(10))
+print(rocketcountdown(2))
+print(doubleloop(2, 2))
+print(doubleloop(3, 4)) 
+print(howmanycombos(1, 1, 1))  # returns ['0:0:0', '0:0:1', '0:1:0', '0:1:1', '1:0:0', '1:0:1', '1:1:0', '1:1:1']
